@@ -2,10 +2,13 @@ const inStock = ['pizza', 'cookies', 'eggs', 'apples', 'milk', 'cheese', 'bread'
 const search = prompt('Search for a product.');
 let message;
 
-if (inStock.includes(search)) {
-	message = `Yes, we do have <strong>${search}</strong> in stock. It's currently #${inStock.indexOf(search) + 1} in our list.`;
+
+if ( !search) {
+ 	message = `<strong>In stock: </strong> ${inStock.join(', ')}`;	
+} else if (inStock.includes(search.toLowerCase())) {
+	message = `Yes, we do have <strong>${search.toLowerCase()}</strong> in stock. It's currently #${inStock.indexOf(search) + 1} in our list.`;
 } else {
-	message = `Sorry, we do not have ${search} in stock`;
+	message = `Sorry, we do not have <strong>${search.toLowerCase()}</strong> in stock`;
 }
 
 document.querySelector('main').innerHTML = `<p>${message}</p>`;
