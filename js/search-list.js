@@ -3,7 +3,7 @@ const search = prompt('Search for a product.');
 let message;
 
 if (inStock.includes(search)) {
-	message = `Yes, we do have <strong>${search}</strong> in stock.`;
+	message = `Yes, we do have <strong>${search}</strong> in stock. It's currently #${inStock.indexOf(search) + 1} in our list.`;
 } else {
 	message = `Sorry, we do not have ${search} in stock`;
 }
